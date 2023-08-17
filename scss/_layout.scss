@@ -1,0 +1,24 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background: rgb(242, 240, 241);
+}
+
+.header{
+    width: 98%;
+    margin: 10px auto;
+
+    &-main {
+        display: flex;
+        @include flexlayout(space-between, center);
+    }
+
+    &-name{
+        @include flexlayout;
+        flex-direction: column;
+        margin-top: 50px;
+    }
+}

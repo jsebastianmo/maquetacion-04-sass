@@ -1,0 +1,99 @@
+.logo{
+    img{
+        display: block;
+        width: 95px;
+    }
+}
+
+.menu-items{
+    @include flexlayout(space-between, center);
+
+    .menu-item{
+        @include menustyle;
+
+        &:hover .menu-link{
+            color: $color-secondary;
+        }
+
+        .menu-link{
+            display: block;
+            text-decoration: none;
+            color: $color-dark;
+            font-family: $font-josefin;
+            transition: color 0.7s;
+        }
+    }
+}
+
+.name-title{
+    font-family: $font-vibes;
+    font-size: 50px;
+    font-weight: 100;
+    color: $color-dark;
+    letter-spacing: 5px;
+}
+
+.name-menu-items{
+    margin-top: 30px;
+    @include flexlayout(space-between, center);
+
+    .menu-item{
+        position: relative;
+        @include menustyle(30px, 30px);
+
+        &:hover .menu-link{
+            color: $color-secondary;
+        }
+
+        .menu-link{
+            display: block;
+            text-decoration: none;
+            color: $color-dark;
+            font-family: $font-josefin;
+            transition: color 0.7s;
+
+            i{
+                cursor: pointer;
+                font-size: 10px;
+            }
+
+            &:hover ~ .sub-menu, &:hover ~ .arrow{
+                opacity: 1;
+            }
+        }
+
+        .arrow{
+            position: absolute;
+            z-index: -1;
+            right: 24px;
+            top: 3px;
+            width: 0px;
+            height: 0px;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid $color-tertiary;
+            border-top: 10px solid transparent;
+            opacity: 0;
+            transition: all 0.4s;
+        }
+    
+        .sub-menu{
+            position: absolute;
+            background: $color-tertiary;
+            padding: 10px;
+            margin-top: 7px;
+            opacity: 0;
+            transition: all 0.4s;
+    
+            &-items{
+                @include menustyle(5px, 5px);
+            }
+
+            &-item{
+                font-family: $font-josefin;
+                color: $color-dark;
+            }
+        }
+    }
+
+}

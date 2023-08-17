@@ -1,0 +1,19 @@
+$color-primary: rgb(242, 240, 241);
+$color-dark: rgb(51, 51, 51);
+$color-secondary: #999999;
+$color-tertiary: #e6e2e4;
+
+$font-josefin: 'Josefin Sans', sans-serif;
+$font-vibes: 'Great Vibes', cursive;
+
+@mixin flexlayout($v: center, $h: center){
+    display: flex;
+    justify-content: $v;
+    align-items: $h;
+}
+
+@mixin menustyle($paddingLeft: 15px, $paddingRight: 15px){
+    list-style: none;
+    padding-left: $paddingLeft;
+    padding-right: $paddingRight;
+}
