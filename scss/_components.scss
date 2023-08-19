@@ -79,6 +79,7 @@
     
         .sub-menu{
             position: absolute;
+            z-index: 10;
             background: $color-tertiary;
             padding: 10px;
             margin-top: 7px;
@@ -96,4 +97,171 @@
         }
     }
 
+}
+
+.content-img{
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    transition: all 100s;
+}
+
+@for $i from 1 through 5 {
+    .content-imgs:nth-child(#{$i}) {
+      animation-name: fade#{$i};
+      animation-duration: 20s;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes fade#{$i} {
+        0%{
+            opacity: 0;
+        }
+        10%{
+            @if $i == 1 {
+                opacity: 1;
+            } @else {
+                opacity: 0;
+            }
+        }
+        20%{
+            @if $i == 1 {
+                opacity: 1;
+            } @else {
+                opacity: 0;
+            }
+        }
+        25%{
+            opacity: 0;
+        }
+        30%{
+            @if $i == 2 {
+                opacity: 1;
+            } @else {
+                opacity: 0;
+            }
+        }
+        40%{
+            @if $i == 2 {
+                opacity: 1;
+            } @else {
+                opacity: 0;
+            }
+        }
+        45%{
+            opacity: 0;
+        }
+        50%{
+            @if $i == 3 {
+                opacity: 1;
+            } @else {
+                opacity: 0;
+            }
+        }
+        60%{
+            @if $i == 3 {
+                opacity: 1;
+            } @else {
+                opacity: 0;
+            }
+        }
+        65%{
+            opacity: 0;
+        }
+        70%{
+            @if $i == 4 {
+                opacity: 1;
+            } @else {
+                opacity: 0;
+            }
+        }
+        80%{
+            @if $i == 4 {
+                opacity: 1;
+            } @else {
+                opacity: 0;
+            }
+        }
+        85%{
+            opacity: 0;
+        }
+        90%{
+            @if $i == 5 {
+                opacity: 1;
+            } @else {
+                opacity: 0;
+            }
+        }
+        100%{
+            @if $i == 5 {
+                opacity: 1;
+            } @else {
+                opacity: 0;
+            }
+        }
+    }
+}
+
+
+.information{
+    position: absolute;
+    left: 50px;
+    bottom: 50px;
+    width: 320px;
+    height: 90px;
+    color: $color-dark;
+    font-family: $font-josefin;
+    padding: 50px;
+    background: rgba($color-light, 0.9);
+
+    &-title{
+        font-size: 35px;
+        font-weight: 300x;
+        margin-bottom: 10px;
+    }
+}
+
+.product{
+    transition: all 0.4s;
+}
+
+.description{
+    width: 160px;
+    height: 130px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include flexlayout(space-around, center);
+    flex-direction: column;
+    box-sizing: border-box;
+    font-family: $font-josefin;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid $color-dark;
+    background: rgba($color-light, 0.6);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.4s 0.2s;
+
+    &-title{
+        font-size: 30px;
+    }
+    &-price{
+        font-weight: 100;
+
+        span{
+            font-weight: bolder;
+        }
+    }
+
+    &-button{
+        display: block;
+        width: 110px;
+        height: 25px;
+        color: $color-sun;
+        background: $color-dark;
+        border: 1px solid $color-sun;
+        cursor: pointer;
+    }
 }

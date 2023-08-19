@@ -22,3 +22,49 @@ body{
         margin-top: 50px;
     }
 }
+
+.content{
+    width: 100%;
+    height: 700px;
+    position: relative;
+    margin-top: 10px;
+
+    &-imgs{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+}
+
+.products{
+    width: 90%;
+    margin: 50px auto;
+
+    &-title{
+        text-align: center;
+        font-size: 40px;
+        font-family: $font-josefin;
+        font-weight: 300;
+        color: $color-dark;
+    }
+
+    &-description{
+        width: 100%;
+        @include flexlayout;
+        padding: 50px;
+        box-sizing: border-box;
+
+        .product-description{
+            position: relative;
+
+            &:hover .product{
+                opacity: 0.6;
+            }
+
+            &:hover .description{
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+}
