@@ -67,4 +67,9 @@ body{
             }
         }
     }
+
+    &-more{
+        width: 100%;
+        @include flexlayout;
+    }
 }
